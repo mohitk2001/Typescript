@@ -10,7 +10,7 @@ export type Question={
 export enum Difficulty{
     EASY = "easy",
   MEDIUM = "medium",
-  HARD = "hard",
+  HARD = "hardd",
 }
 
 export type QuestionState=Question & {answer:string[]}
