@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { fetchQuizQuestions, Difficulty } from "../API";
+import { fetchQuizQuestions, Difficulty,temp } from "../API";
 function QuestionCard() {
   useEffect(() => {
-    fetchQuizQuestions(10, Difficulty.HARD);
+    temp(10, Difficulty.HARD);
   }, []);
 
   return (
