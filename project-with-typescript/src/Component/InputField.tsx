@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { Todo } from "../model/model";
-
+import TodoLists from "./TodoLists";
 interface Props {
-  todo: String;
+  todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
   Todos: Todo[];
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
@@ -16,8 +16,7 @@ export const InputField: React.FC<Props> = ({
   const inputTodo = useRef<null | HTMLInputElement>(null);
   const handleForm = (e: React.FormEvent): void => {
     e.preventDefault();
-    // console.log(typeof inputTodo);
-    // console.log(typeof setTodo);
+    
     setTodo(inputTodo.current?.value as string);
     console.log(todo);
 
@@ -36,6 +35,7 @@ export const InputField: React.FC<Props> = ({
         <input placeholder="Enter your task" ref={inputTodo} />
         <button type="submit">Go</button>
       </form>
+      <TodoLists alltodos={Todos}/>
     </div>
   );
 };
